@@ -19,6 +19,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        {/*<style jsx>{`*/}
+        {/*  :global(.js-focus-visible) :focus:not(.focus-visible) {*/}
+        {/*    outline: none;*/}
+        {/*  }*/}
+        {/*`}</style>*/}
       </body>
     </html>
   );

@@ -3,12 +3,9 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -19,34 +16,16 @@ import {
 
 const products = [
   {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
+    name: "Help Center",
+    description: "Check FAQ",
     href: "#",
     icon: CursorArrowRaysIcon,
   },
   {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    name: "Community",
+    description: "Join our community in Discord",
     href: "#",
     icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
   },
 ];
 const callsToAction = [
@@ -65,7 +44,7 @@ export default function Header() {
     <header className="bg-white">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
+        aria-label="Navigation"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -90,7 +69,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+              Resources
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -132,33 +111,15 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
               </Popover.Panel>
             </Transition>
           </Popover>
 
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
+            Blog
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
+            About
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -200,7 +161,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        Resources
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -210,7 +171,7 @@ export default function Header() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -228,19 +189,13 @@ export default function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  Blog
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
+                  About
                 </a>
               </div>
               <div className="py-6">
