@@ -114,7 +114,6 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Blog
           </a>
